@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Story;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +16,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/stories', function () {
+    $stories = Story::all();    
+    return view('stories.index', ['stories' => $stories]);
 });
