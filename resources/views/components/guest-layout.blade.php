@@ -7,10 +7,10 @@
 </head>
 <body>
     <x-menu/>
-    <div>
+    <div class="max-w-3xl m-auto">
         {{ $slot }}
     </div>
-    <div>
+    <div class="text-white h-12 w-full absolute bottom-0 bg-blue-400">
         Rodapé
     </div>
 
