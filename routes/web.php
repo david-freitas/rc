@@ -1,7 +1,8 @@
 <?php
 
 use App\Models\Story;
-use GuzzleHttp\Psr7\Request;
+use Illuminate\Contracts\Session\Session;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,10 +30,17 @@ Route::get('/stories', function () {
     return view('stories.index', ['stories' => $stories]);
 });
 
-Route::post('/stories', function () {
-    $title = request()->input('title');
-    $description = request()->input('description');
-    Story::create(['title' => $title, 'description' => $description]);
+Route::post('/stories', function (Request $request) {
+
+    $validated = $request->validate([
+        'title' => 'required|min:5|max:7',
+        'description' => 'required',
+    ]);
+
+    Story::create($validated);
+
+    return redirect('/stories/create')->with('status','Foi criado.');
+
 });
 
 
