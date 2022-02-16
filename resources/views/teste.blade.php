@@ -1,3 +1,4 @@
 <x-guestLayout>
-    TESTE
+    Teste.blade.php
+    <livewire:teste />
 </x-guestLayout>

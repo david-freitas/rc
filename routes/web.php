@@ -26,7 +26,8 @@ Route::get('/teste', function () {
 
 
 Route::get('/stories', function () {
-    $stories = Story::all();    
+    // $stories = Story::all();    
+    $stories = Story::paginate(20);    
     return view('stories.index', ['stories' => $stories]);
 });
 
@@ -39,7 +40,7 @@ Route::post('/stories', function (Request $request) {
 
     Story::create($validated);
 
-    return redirect('/stories/create')->with('status','Foi criado.');
+    return redirect('/stories/create')->with('status','Foi criada a história ' . $validated["title"]);
 
 });
 

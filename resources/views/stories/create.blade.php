@@ -17,7 +17,7 @@
             Descrição <input 
                             class="border px-1 py-0.5 w-32 mx-2 rounded-xl bg-green-50" 
                             type="text" 
-                            
+                               
                             value="{{ old('description') }}"
                             name="description">
             @error('description')

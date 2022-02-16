@@ -4,4 +4,7 @@
             <x-story :story="$story"/>
         @endforeach
     </div>
+
+    {{ $stories->links() }}
+
 </x-guestLayout>
