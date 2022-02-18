@@ -31,6 +31,10 @@ Route::get('/stories', function () {
     return view('stories.index', ['stories' => $stories]);
 });
 
+Route::get('/stories-livewire', function () {
+    return view('stories.livewire');
+});
+
 Route::post('/stories', function (Request $request) {
 
     $validated = $request->validate([
