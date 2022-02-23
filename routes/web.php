@@ -59,4 +59,8 @@ Route::get('/stories/{story}', function ($story) {
     return view('stories.show', ['story' => $story]);
 });
 
+// php artisan livewire:make Exercicio1
+Route::get('/exercicio/1', function () {    
+    return view('exercicios.ex1');
+});
 
